@@ -14,37 +14,25 @@ public class GreetingResource {
         return "Hello RESTEasy";
     }
 
-
     @GET
-    @Path("/charities")
+    @Path("/bots")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Charity> charities() {
-        System.out.println("get charities");
+    public List<Bot> bots() {
+        System.out.println("get bots");
 
-        List<Charity> charities = em.createQuery("from Charity", Charity.class).getResultList();
+        List<Bot> bots = em.createQuery("from Bot", Bot.class).getResultList();
 
-        return charities;
+        return bots;
     }
 
     @GET
-    @Path("/charities/{id}")
+    @Path("/data_sources")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Charity> charities(@PathParam("id") int id) {
-        System.out.println("get charities " + id);
+    public List<DataSource> dataSources() {
+        System.out.println("get dataSources");
 
-        List<Charity> charities = em.createQuery("from Charity where id="+id, Charity.class).getResultList();
+        List<DataSource> dataSources = em.createQuery("from DataSource", DataSource.class).getResultList();
 
-        return charities;
-    }
-
-    @GET
-    @Path("/donors")
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<Donor> donors() {
-        System.out.println("get donors");
-
-        List<Donor> donors = em.createQuery("from Donor", Donor.class).getResultList();
-
-        return donors;
+        return dataSources;
     }
 }
