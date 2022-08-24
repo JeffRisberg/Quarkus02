@@ -1,16 +1,17 @@
-package com.company;
+package com.company.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/** JPA entity. */
+/** Example JPA entity. */
 @Entity
-@Table(name = "data_sources")
-public class DataSource {
+@Table(name = "bots")
+public class Bot {
   private Long id;
   private String name;
+  private String description;
 
   @Id
   @GeneratedValue
@@ -28,5 +29,13 @@ public class DataSource {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
   }
 }

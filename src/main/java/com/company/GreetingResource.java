@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.entities.Bot;
+import com.company.entities.DataSource;
+
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.ws.rs.GET;
